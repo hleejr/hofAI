@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
--->ß
+-->
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -17,6 +17,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -47,8 +48,6 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -57,13 +56,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -75,60 +67,27 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`hleejr`, `hofAI`, `_knowbodyknows`, `hleejr0103@gmail.com`, `Hall of Fame AI`, `Database of major league sports players' statistics with hall of fame predictive analysis driven by machine-learning algorithms`
-
+I have been obsessed with sports for about as long as I remember. Wanting to get into the sports data industry, creating this project was a fun way for me to combine my newfound data science skills with my lifelong love of sports.
 
 ### Built With
 
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/hleejr/hofAI.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-
+* Python
+* Pandas
+* Django
+* AWS Beanstalk
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Visit [hofAI](https://hofai.herokuapp.com) to view the website.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
+<br />
+<p align="center">
+    <img src="images/screenshot.png" alt="Logo" width="80" height="80">
+</p>
 
 <!-- ROADMAP -->
 ## Roadmap
