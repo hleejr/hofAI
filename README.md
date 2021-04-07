@@ -93,6 +93,9 @@ The hall of fame predictions are currently driven by a supervised machine learni
 <p align="center">
     <img src="images/screenshot_tree.png" alt="Logo" >
 </p>
+
+You can read more about the models used [here](https://hofai.herokuapp.com/models)!
+
 <!-- ROADMAP -->
 ## Roadmap
 
