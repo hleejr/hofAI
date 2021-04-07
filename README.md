@@ -91,7 +91,7 @@ Visit [hofAI](https://hofai.herokuapp.com) to view the website.
 The hall of fame predictions are currently driven by a supervised machine learning algorithm called the Random Tree Classifier
 
 <p align="center">
-    <img src="images/screenshot.png" alt="Logo" >
+    <img src="images/screenshot_tree.png" alt="Logo" >
 </p>
 <!-- ROADMAP -->
 ## Roadmap
