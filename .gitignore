@@ -1,0 +1,20 @@
+git.txt
+
+# model setup
+create_mod.py
+import_json.py
+
+#pycache
+__pycache__
+hofAI/__pycache__
+models/__pycache__
+players/__pycache__
+
+nfl.json
+output.json
+
+output.csv
+
+# Firebase setup 
+FirebaseKey.json
+node_modules
