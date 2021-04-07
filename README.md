@@ -86,7 +86,7 @@ Visit [hofAI](https://hofai.herokuapp.com) to view the website.
 
 <br />
 <p align="center">
-    <img src="images/screenshot.png" alt="Logo" width="80" height="80">
+    <img src="images/screenshot.png" alt="Logo" >
 </p>
 
 <!-- ROADMAP -->
