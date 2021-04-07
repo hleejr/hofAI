@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
--->
+-->ß
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -179,15 +179,15 @@ Project Link: [https://github.com/hleejr/hofAI](https://github.com/hleejr/hofAI)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/hleejr/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/hleejr/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/hleejr/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/hleejr/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/hleejr/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/hleejr/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/hleejr/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/hleejr/repo/issues
-[license-shield]: https://img.shields.io/github/license/hleejr/repo.svg?style=for-the-badge
-[license-url]: https://github.com/hleejr/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/hleejr/hofAI.svg?style=for-the-badge
+[contributors-url]: https://github.com/hleejr/hofAI/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hleejr/hofAI.svg?style=for-the-badge
+[forks-url]: https://github.com/hleejr/hofAI/network/members
+[stars-shield]: https://img.shields.io/github/stars/hleejr/hofAI.svg?style=for-the-badge
+[stars-url]: https://github.com/hleejr/hofAI/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hleejr/hofAI.svg?style=for-the-badge
+[issues-url]: https://github.com/hleejr/hofAI/issues
+[license-shield]: https://img.shields.io/github/license/hleejr/hofAI.svg?style=for-the-badge
+[license-url]: https://github.com/hleejr/hofAI/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hleejr
