@@ -1,0 +1,40 @@
+{% extends "players/base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h3>{{ player.name }} <small class="text-muted"> <b>{{ player.pos }}</b></small></h3>
+    <hr style="width:100%">
+    <div class="col m-4">
+        {% if player.img %}
+        <img height="400" width="300" src="{{ player.img }}"/>
+        {% else %}
+        <img height="400" width="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbpU6GkMI8ivbsi2MW6meWCaxX-ir7ygbqpA&usqp=CAU"/>
+        {% endif %}
+    </div>
+    <div class="col m-4">
+      <h4>Played in the {{ player.league }}</h4>
+      <h4>Games Played: {{ player.games }}</h4>
+      <h4>Games Started: {{ player.starts }}</h4>
+      <h4>Minutes Per: {{ player.mins }}</h4>
+      <hr>
+      <h4>{{ player.awards }}</h4>
+    </div>
+    <div class="col m-4">
+        {% ifnotequal predict 1 %}
+        <p style="font-size: 2.5rem;"> Has a {{ predict }} chance of being inducted into the NBA Hall of Fame</p>
+        {% else %}
+        <p style="font-size: 3.5rem;"> Has been inducted into the NBA Hall of Fame</p>
+        {% endifnotequal %}
+    </div>
+    <hr style="width:100%">
+    <div class="row">
+        {{ stats|safe }}
+    </div>
+    <hr style="width:100%">
+      <a href="/players/nfl">Back to List</a>
+    <hr style="width:100%">
+  </div>
+  
+</div>
+{% endblock %}

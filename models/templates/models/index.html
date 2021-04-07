@@ -1,0 +1,152 @@
+{% extends "models/base.html" %}
+
+{% block content %}
+<style>
+    @media (min-width: 576px) {
+        html { font-size: 0.25rem; }
+    }
+    @media (min-width: 768px) {
+        html { font-size: 0.5rem; }
+    }
+    @media (min-width: 992px) {
+        html { font-size: 0.75rem; }
+    }
+    @media (min-width: 1200px) {
+        html { font-size: 1rem; }
+    }
+    @media screen and (min-width: 768px) { 
+        .modal:before {
+            display: inline-block;
+            vertical-align: middle;
+            content: " ";
+            height: 100%;
+        }
+    }
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .modal-content{
+        width: 500px;
+        height: 500px;
+    }
+    .hero-background-img {
+        position: relative;
+        background: rgba(164, 164, 164, 0.3); /* If our image is bright, we can tone it down with this darker overlay */
+        padding-top:200px;  
+        padding-bottom:150px;
+    }
+    .hero-background-img:after {
+        content: "";
+        position: absolute;
+        background-image: url("/media/models/allsports.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.5; /* Tone the image down further by giving it transparency */
+    }
+    .set{
+        color: white;
+        position: absolute;
+        top: 5%;
+        left: 11%;
+        transform: translate(-50%, -50%);
+    }
+    .centered {
+        color: white;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<!-- HERO -->
+<div class="jumbotron text-center hero-background-img">
+    <h5 class="set">The Sports Fiend's Paradise</h5>
+    <h1 class="centered">hofAI</h1>
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See what we're planning!</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upcoming hofAI Updates</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="color: white;">
+            These updates are listed in order of priority ranking. The features at the top of the list will be the ones that come to the site first.
+            <br>
+            <br>
+            I. Developing a renovated user experience to make the site more visual appealing, enticing and welcoming for new and returning users
+            <br>
+            <br>
+            II. Data wrangling from various resources to collect statistics on current, retired and hall of fame football players
+            <br>
+            <br>
+            III. Training, critiquing and deploying a machine learning algortihm for NFL players' hall of fame predictions
+            <br>
+            <br>
+            IV. Adding football player statistics and predictions to site database
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3 style="color: white;">Accurate</h3>
+            <p class="lead">
+                After reviewing multiple sources for our data, we ensure that our models are trained with the most up to date and accurate sporting data. We have tested our model training methods with various different machine learning algorithms to ensure we provide the most accurate and adaptable prediction models.
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h3 style="color: white;">Diverse</h3>
+            <p class="lead">
+                While we currently have hall of fame predictions for multiple sports, we aim to provide much more than that. We are workiing to add things like season and career stats, player comparisons, highlights, and more to ensure this is the one stop for all your sports related needs.
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h3 style="color: white;">Community</h3>
+            <p class="lead">
+                One of the most important things about sports is the community and connections that they foster. We want to provide a fun and informative community for sports fiends to converse and connect with one another over their favorite sports and athletes.
+            </p>
+        </div>
+    </div>
+    <div class="row m-5 text-center">
+        <div class="col-lg-6 offset-lg-3">
+            <!-- <img src="download.jpeg" class="img-fluid rounded"> -->
+        </div>
+    </div>
+</div>
+
+
+<!-- CALL TO ACTION -->
+<div class="jumbotron text-center mb-0">
+    <p class="lead mb-4">Search our extensive player database!</p>
+    <div class="d-flex justify-content-center">
+        <form action="" method="get">
+            <div class="">
+                <input type="text" class="form-control" placeholder="Search all NBA and NFL players ... " aria-label="Search" aria-describedby="basic-addon1" name="input" size="103" id="myInput">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

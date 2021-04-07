@@ -1,0 +1,27 @@
+{% extends "players/base.html" %}
+
+{% block content %}
+    <h1>Search Results</h1>
+
+    <ul>
+    <div class="card-columns">
+        {% for player in results %}
+        <div class="card mb-3">
+            <p class="card-header card-title" style="font-size: x-small; text-align: center;">{{ player.name }}</p>
+            <div class="card-body border-dark">
+                {% if player.img %}
+                <img height="300" width="100%" src="{{ player.img }}"/>
+                {% else %}
+                <img height="300" width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbpU6GkMI8ivbsi2MW6meWCaxX-ir7ygbqpA&usqp=CAU"/>
+                {% endif %}
+                <div class="text-right"><a href="{% url 'nba-detail-page' player.id %}" title="Read More">Read More</a></div>
+            </div>
+            <div class="card-footer">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <hr style="width:100%">
+        <a href="/players/nba">Back to List</a>
+    <hr style="width:100%">
+{% endblock %}

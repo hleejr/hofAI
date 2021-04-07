@@ -1,0 +1,88 @@
+<style>
+    .overflow-auto::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .overflow-auto::-webkit-scrollbar:vertical {
+        width: 11px;
+    }
+
+    .overflow-auto::-webkit-scrollbar:horizontal {
+        height: 16px;
+    }
+
+    .overflow-auto::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border: 2px solid white; /* should match background, can't be transparent */
+        background-color: rgba(0, 0, 0, .5);
+    }
+    .overflow-auto::-webkit-scrollbar-button {
+        background-size: 100%;
+        height: 50px;
+        width: 50px;
+    }
+    .overflow-auto::-webkit-scrollbar-button:start {
+        display: none;
+    }
+    .overflow-auto::-webkit-scrollbar-button:horizontal:decrement {
+        display: none;    
+    }
+    .overflow-auto::-webkit-scrollbar-button:horizontal:increment {
+        background-image: url(https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/2559018901553169564-512.png);
+    }
+    @media screen and (min-width: 768px) { 
+        .img-fluid {
+            height: 300px;
+        }
+        .carousel-caption { 
+            width:200px; 
+            z-index:10; 
+            color:#fff; 
+            text-align:center; 
+            top:50%; 
+            left:65%; 
+            bottom:auto; 
+            -webkit-transform:translate(0, -50%); 
+            -ms-transform:translate(0, -50%); 
+            transform:translate(0, -50%); 
+        }
+    }
+    
+</style>
+
+<h1>NBA Top 10 Percentages</h1>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 img-fluid" src="https://clutchpoints.com/wp-content/uploads/2020/06/Greatest-NBA-Players-Best-NBA-Players-Ranking-NBA-Players-NBA-Goat.-Who-Is-The-Best-Player-Ever-1.jpg" alt="NBA">
+        </div>
+        {% for player in nba %}
+        <div class="carousel-item">
+            {% if player.img %}
+            <img class="img-fluid rounded mx-auto d-block" src="{{ player.img }}" alt="{{ player.name }}">
+            <div class="carousel-caption d-none d-md-block">
+                <h1><a href="{% url 'nba-detail-page' player.id %}" title="Player profile">{{ player.name }}</a></h1>
+                <br>
+                <h5>{{ high|get_item:player.name }}</h5>
+            </div>
+            {% else %}
+            <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbpU6GkMI8ivbsi2MW6meWCaxX-ir7ygbqpA&usqp=CAU" alt="{{ player.name }}">
+            <div class="carousel-caption d-none d-md-block">
+                <h1><a href="{% url 'nba-detail-page' player.id %}" title="Player profile">{{ player.name }}</a></h1>
+                <br>
+                <h5>{{ high|get_item:player.name }}</h5>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>

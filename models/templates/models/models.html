@@ -1,0 +1,22 @@
+{% extends "models/base.html" %}
+
+{% block content %}
+
+<p>The type of algorithm running is a <strong>Random Forest Classifier</strong>. A random forest fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.</p>
+<p>Here is a visual to help conceptualize what it does.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/media/models/random_forest.jpg" alt="title"></p>
+
+</div>
+</div>
+</div>
+<br>
+
+<strong><a href="{% url 'nba-model-detail' %}"><h2>NBA Predictions Model</h2></a></strong>
+{% endblock %}

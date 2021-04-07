@@ -1,0 +1,133 @@
+{% extends "models/base.html" %}
+
+{% block content %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Our-Predictions-Algorithm">Our NBA Predictions Algorithm</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To build our model we started by scraping the players data from both <strong><a href="https://www.basketball-reference.com">https://www.basketball-reference.com</a></strong> and <strong><a href="https://basketball.realgm.com/nba/players">https://basketball.realgm.com/nba/players</a></strong> with our personally built scraper. Afterwards, we seperated all the player data into seperate dataframes based on three categories: current players, retired players who are not in the hall of fame, and retired players who are in the hall of fame. After seperation, the data is cleaned of all NaN values by replacing them with the approriate measure of central tendecy (mean, median, or mode). Then the current players are set aside, as they are the ones who will be receiving predictions, and the hall of fame players data is upsampled so that its number matches that of the retired players not in the hall of fame. Once the samples are even the model can be trained. Below are the statistics of our algorithm.</p>
+
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00      1066
+           1       0.99      1.00      1.00      1041
+
+    accuracy                           1.00      2107
+   macro avg       1.00      1.00      1.00      2107
+weighted avg       1.00      1.00      1.00      2107
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The report shows the main classification metrics <strong>precision, recall and f1-score</strong> on a per-class basis. The metrics are calculated by using true and false positives, true and false negatives. Positive and negative in this case are generic names for the predicted classes.</p>
+<h3 id="Precision-~-What-percent-of-your-predictions-were-correct?">Precision ~ What percent of your predictions were correct?</h3><p>Precision is the ability of a classifier not to label an instance positive that is actually negative. For each class it is defined as the ratio of true positives to the sum of true and false positives.</p>
+<h3 id="Recall-~-What-percent-of-the-positive-cases-did-you-catch?">Recall ~ What percent of the positive cases did you catch?</h3><p>Recall is the ability of a classifier to find all positive instances. For each class it is defined as the ratio of true positives to the sum of true positives and false negatives.</p>
+<h3 id="F1_Score-~-What-percent-of-positive-predictions-were-correct?">F1_Score ~ What percent of positive predictions were correct?</h3><p>The F1 score is a weighted harmonic mean of precision and recall such that the best score is 1.0 and the worst is 0.0. Generally speaking, F1 scores are lower than accuracy measures as they embed precision and recall into their computation. As a rule of thumb, the weighted average of F1 should be used to compare classifier models, not global accuracy.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After the model has been built, we create a function that makes use of the current players dataframe and the model's <strong>predict_proba()</strong> function to get the percentage of how likely active players are to be inducted into the hall of fame. This can also be used on retired players who aren't inducted, but should be like say Chris Webber.</p>
+<p>Moving forward we want to maximum the accuracy and usefulness of our AI predictions, not just for NBA players but players across all sports. One way of doing this is by evaluating our model's feature importance.</p>
+<div class="output_wrapper">
+    <div class="output">
+    
+    
+    <div class="output_area">
+    
+        <div class="prompt"></div>
+    
+    
+    <div class="output_subarea output_stream output_stdout output_text">
+    <pre>    
+    fgm:0.02889		fga:0.03053         fgp:0.01347
+    thpm:0.0127		thpa:0.01388        thpp:0.01501
+    twpm:0.14897	twpa:0.11251        twpp:0.02904
+    efgp:0.03147	ftm:0.07091         fta:0.08094
+    ftp:0.00468		orb:0.01822         drb:0.02559
+    trb:0.02182		ast:0.02774         blk:0.04466
+    tov:0.06754		fouls:0.02485       pts:0.00868
+    stl:0.04064		played:0.01995      MVP:0.00071
+    ROY:0.00065		DPOY:0.00013        MIP:0.00012
+    AMVP:0.00058	FMVP:0.00038        NBAC:0.00412
+    ABAC:0.00169	STAR:0.0791         ALL-NBA:0.01392
+    ALL-ABA:0.00205	ALL-ROO:0.00204     ALL-DEF:0.00098
+    SCORE:9e-05		ASTC:0.00011        TRBC:0.00049
+    STLC:6e-05		BLKC:7e-05
+    </pre>
+    </div>
+    </div>
+    
+    </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above are listed the <strong>levels of importance</strong>, or weights of each feature used to train our model. The abbreviations all represent the following (going row by row reading left to right): <strong>field goals made, field goals attempted, field goal percentage, three pointers made, three pointers attempted, three point percentage, two pointers made, two pointers attempted, two point percentage, effective field goal percentage, free throws made, free throws attempted, free throw percentage, offensive rebounds, defensive rebounds, total rebounds, assist, blocks, turnovers, personal fouls, points, steals, games played, MVP awards received, Rookie of the Year award received, Defensive Player of the Year awards received, Most Improved Player awards received, All Star Game MVP awards received, NBA Finals MVP awards received, NBA Championships won, ABA Championships won, All Star Game selections, All-NBA Team selections, All-ABA Team selections, All-Rookie selection, All-Defensive Team selections, League Leading Scoring, League Leading Assist, League Leading Rebounds, League Leading Steals, and League Leading Blocks</strong>.</p>
+<p>We can see that many of these features have very little impact on the model. This could mean that we are training on too many features that are simlar to one another. For example, I probably don't need both <strong>field goals made</strong> and <strong>field goals attempted</strong> if I have the <strong>field goal percentage</strong>. So it would make more sense to just take the percentage and the made shots. However, with this specific example, we have the shots split into two and three pointers along with the <strong>effective field goal percentage</strong> so we could just get rid of all three of the field goal related features.</p>
+<p>Based on these weights and the type of data we have, I would keep features: "fgm", "fgp", "efgp", "ftm", "trb", "ast", "blk", "pts", "stl", "NBAC", "STAR", "ALL-NBA". After removing the other columns the weights are: </p>
+
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+    <div class="output">
+    
+    
+    <div class="output_area">
+    
+        <div class="prompt"></div>
+    
+    
+    <div class="output_subarea output_stream output_stdout output_text">
+    <pre>
+    fgm:0.07063     fgp:0.03652     efgp:0.10267    ftm:0.1673
+    trb:0.05044     ast:0.06689     blk:0.08038     pts:0.07775
+    stl:0.14553     NBAC:0.01088    STAR:0.16619    ALL-NBA:0.02484
+    </pre>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we should probably manually edit these weights a little. While the computer's algorithm optimizes all the features and their weights for the most ideal spread, there is a human element that we must consider. With that being said, I would only make a few slight changes to the model's weights. I would keep the exact same numbers and distribution, however I would swap the weights of <strong>pts</strong> and <strong>stl</strong> along with swapping the weights of <strong>NBAC</strong> and <strong>fgp</strong>. Yet and still, now our model is pretty accurate.</p>
+
+</div>
+</div>
+</div>
+{% endblock %}
