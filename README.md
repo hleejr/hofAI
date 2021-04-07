@@ -84,11 +84,15 @@ I have been obsessed with sports for about as long as I remember. Wanting to get
 
 Visit [hofAI](https://hofai.herokuapp.com) to view the website.
 
-<br />
 <p align="center">
     <img src="images/screenshot.png" alt="Logo" >
 </p>
 
+The hall of fame predictions are currently driven by a supervised machine learning algorithm called the Random Tree Classifier
+
+<p align="center">
+    <img src="images/screenshot.png" alt="Logo" >
+</p>
 <!-- ROADMAP -->
 ## Roadmap
 
