@@ -113,7 +113,7 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 <!-- Current Objectives -->
-## Current Objectives
+## Future Scope
 
 * Implement mobile styling
 * Add player data for sports other than football and basketball
