@@ -112,6 +112,13 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+<!-- Current Objectives -->
+## Current Objectives
+
+* Implement mobile styling
+* Add player data for sports other than football and basketball
+* Test various models and algorithms to see if there is a way to improve model prediction accuracy
+
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
