@@ -27,7 +27,8 @@ def zone(request):
     names = []
     per = []
     pers = {}
-    for arr in top10:
+
+    for arr in top10: 
         names.append(arr[0])
         per.append(arr[1])
         pers[arr[0]] = arr[1]
@@ -42,7 +43,7 @@ def zone(request):
 
     return render(request, 'models/zone.html', {
         "nba": nba,
-        "high": pers
+        "high": pers,
     })
 
 def ml_models(request):

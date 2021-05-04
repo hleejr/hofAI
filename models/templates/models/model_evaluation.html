@@ -50,7 +50,7 @@
     
 </style>
 
-<h1>NBA Top 10 Percentages</h1>
+<h1 class="nba">NBA Top 10 Percentages</h1>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -86,3 +86,13 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
+<table class="nba_table">
+    {% for player in nba %}
+       <tr>
+            <th><a href="{% url 'nba-detail-page' player.id %}" title="Player profile">{{ player.name }}</a></th>
+            <td style="padding-left: 30px">{{ high|get_item:player.name }}</td>
+       </tr>
+    {% endfor %}
+</table>
+
+{{ table }}
